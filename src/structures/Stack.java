@@ -1,6 +1,5 @@
 package structures;
 
-import java.awt.Point;
 import java.lang.reflect.Array;
 
 public class Stack<T> {
@@ -52,18 +51,6 @@ public class Stack<T> {
 		return pool.length;
 	}
 	
-	public static void main() {
-		// using stack sample
-		try {
-			Stack<Point> points;
-			points = new Stack<Point>();
-			points.push(new Point());
-			Point p = points.pop();
-			boolean isEmpty = points.size() == 0;
-		}
-		catch(StackException e) {}
-	}
-	
 	protected void init(int size) throws StackException {
 		idx = 0;
 		pool = newArray(size);
@@ -76,8 +63,8 @@ public class Stack<T> {
 		pool = temp;
 	}
 	
-	protected T[] newArray(int size) throws StackException {
-		Class<T> c = null; 
+	protected T[] newArray(int size) throws StackException {	
+		Class<T> c = null; // here we need instance of class T
 		try {
 			c.newInstance();
 		} catch (InstantiationException|IllegalAccessException e) {
