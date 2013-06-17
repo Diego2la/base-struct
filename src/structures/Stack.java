@@ -31,6 +31,11 @@ public class Stack<T> {
 	}
 	
 	public void push(T elem) throws StackException {
+		if (classType == null) {
+			classType = (Class<T>)elem.getClass();
+			// first creation of array
+			pool = newArray(init_size);
+		}
 		if (idx == pool.length - 1) increaseSize();
 		pool[++idx] = elem;
 	}
@@ -53,7 +58,9 @@ public class Stack<T> {
 	
 	protected void init(int size) throws StackException {
 		idx = 0;
-		pool = newArray(size);
+		init_size = size;
+		pool = null;
+		classType = null;
 	}
 
 	protected void increaseSize() throws StackException {
@@ -64,7 +71,7 @@ public class Stack<T> {
 	}
 	
 	protected T[] newArray(int size) throws StackException {	
-		Class<T> c = null; // here we need instance of class T
+		Class<T> c = classType;
 		try {
 			c.newInstance();
 		} catch (InstantiationException|IllegalAccessException e) {
@@ -75,6 +82,8 @@ public class Stack<T> {
 	
 	protected T[] pool;
 	protected int idx;
+	protected int init_size;
+	protected Class<T> classType;
 	
 	private final int DEFAULT_STACK_SIZE = 10;
 }
