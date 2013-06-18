@@ -1,5 +1,7 @@
 package structure;
 
+import structure.exceptions.PointException;
+
 // simple 2D (int, int) point implementation
 public class Point {
 	public int x;
@@ -13,4 +15,12 @@ public class Point {
 	public String toString() {
 		return new String("(" + x + ", " + y + ")");
 	}
+	public double distance(Point p) throws PointException {
+		if (p != null) {
+			return Math.sqrt( (p.x - x)*(p.x - x) + (p.y - y)*(p.y - y) );
+		}
+		else throw new PointException(new String("null Point"));
+	}
+	
+	
 }

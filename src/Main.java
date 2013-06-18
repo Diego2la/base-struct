@@ -35,10 +35,14 @@ public class Main {
 		System.out.println("============================================");
 		System.out.println(); 
 		
+		System.out.println("================ Triangle test =============");
+		testTriangle();
+		System.out.println("============================================");
+		System.out.println(); 
+		
 	}
 
 	protected static void testVector() {
-		
 		Vector<Integer> v = null;
 		try {
 			v = new Vector<Integer>(2);
@@ -131,6 +135,7 @@ public class Main {
 		System.out.println(q);
 
 	}
+	
 	protected static void testFraction() {
 		String output = new String();
 		try {
@@ -163,7 +168,18 @@ public class Main {
 		catch (FractionException e) {
 			System.out.println("Error : " + e.toString());
 		}
-		
-
 	}
+		
+	protected static void testTriangle() {	
+		Triangle t = new Triangle(new Point(0, 0), new Point(3, 0), new Point(0, 4));
+		try {
+			System.out.println("Square = " + t.square());
+			System.out.println("Perimeter = " + t.perimeter());
+			System.out.println("Second vertice = " + t.getVertice(1));
+		} catch (TriangleException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }

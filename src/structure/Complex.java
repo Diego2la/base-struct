@@ -1,5 +1,7 @@
 package structure;
 
+import structure.exceptions.ComplexException;
+
 public class Complex
 {
     public double re;
@@ -11,22 +13,35 @@ public class Complex
         this.im = b;
     }
     
-	public Complex plus(Complex z)
+	public Complex plus(Complex z) throws ComplexException
     {
-        return new Complex(re + z.re, im + z.im);
+        if (z == null)
+		{
+			throw new ComplexException(new String("it's null!"));
+		}
+		return new Complex(re + z.re, im + z.im);
     }
     
-    public Complex minus(Complex z)
+    public Complex minus(Complex z) throws ComplexException
     {
-        return new Complex(re - z.re, im - z.im);
+        if (z == null)
+		{
+			throw new ComplexException(new String("it's null!"));
+		}
+		return new Complex(re - z.re, im - z.im);
     }
 	
     public boolean isReal() {
 		return Math.abs(im) < MIN; 
 	}
 	
-    public boolean equals(Complex z) { 
-        return (Math.abs(re - z.re) + Math.abs(im - z.im)) < MIN;
+    public boolean equals(Complex z) throws ComplexException
+	{ 
+        if (z == null)
+		{
+			throw new ComplexException(new String("it's null!"));
+		}
+		return (Math.abs(re - z.re) + Math.abs(im - z.im)) < MIN;
     }
     
     public double mod() { 

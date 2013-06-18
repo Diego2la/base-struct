@@ -40,7 +40,7 @@ public class StudentsList {
         list = null; 
     } 
       
-    public void add(String name, int id) throws IncorrectDataException{ 
+    public void add(String name, int id) throws IncorrectDataException { 
         if (name == null) throw new IncorrectDataException(NULL_NAME); 
         if (list == null) { 
             list = new List(name, id); 
