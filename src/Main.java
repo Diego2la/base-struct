@@ -1,5 +1,4 @@
 
-import java.io.ObjectInputStream.GetField;
 
 import structure.*;
 import structure.exceptions.*;
