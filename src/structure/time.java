@@ -7,19 +7,19 @@ public class time {
 	public int hour = 0;
     public int min = 0;
     
-    public void Set(int a, int b)
+    public void Set(int hour, int min)
     {
-    	if ((a>=0) && (a<=24))
+    	if ((hour>=0) && (hour<=24))
     	{
-    		this.hour = a;
+    		this.hour = hour;
     	}
     	else
     	{
     		System.out.println ("Incorrect format");
     	}
-    	if ((b>=0) && (a<=60))
+    	if ((min>=0) && (min<=60))
     	{
-    		this.min = b;
+    		this.min = min;
     	}
     	else
     	{
