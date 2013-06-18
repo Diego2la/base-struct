@@ -6,9 +6,10 @@ public class Fraction
 	public int n; //denominator
 	
 	
-	public Fraction(int m, int n) throws FractionException 
+	public Fraction (int m, int n) throws FractionException 
 	{
-		if (n == 0){
+		if (n == 0)
+		{
 			throw new FractionException(new String("Divided by zero.(n != 0)"));
 		}
 		Short(this);
@@ -16,7 +17,10 @@ public class Fraction
 	
 	public Fraction operator (Fraction frct1, char symbolOperator, Fraction frct2 ) throws FractionException
 	{
-		
+		if ( (frct1 == null) || (frct2 == null))
+		{
+			throw new FractionException(new String("Why are u kidding me bro it's not fraction it's null!"));
+		}
 		switch (symbolOperator){
 			case '-' :
 			{
@@ -57,8 +61,13 @@ public class Fraction
 		
 	}	
 
-	private void Short(Fraction frct)
+	private void Short (Fraction frct)  throws FractionException
 	{
+		if (frct == null)
+		{
+			throw new FractionException(new String("Why are u kidding me bro it's not fraction it's null!"));
+		}
+		
 		int[] primeNumbers;
 		int size;
 		
@@ -87,7 +96,7 @@ public class Fraction
 			{
 				if (primeNumbers[j] == 0) primeNumbers[j] = i;
 
-				else if (i%primeNumbers[j] != 0) break;
+				else if (i % primeNumbers[j] != 0) break;
 			}
 		}
 		
@@ -104,4 +113,17 @@ public class Fraction
 		
 	}
 
+	public String toString(Fraction frct) throws FractionException
+	{
+		if (frct == null)
+		{
+			throw new FractionException(new String("Why are u kidding me bro it's not fraction it's null!"));
+		}
+		String s = new String();
+		
+		s = "huy";
+
+		
+		return s;
+	}
 }

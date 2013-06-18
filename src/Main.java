@@ -13,6 +13,8 @@ public class Main {
 		
 		testQueue();
 		
+		testFraction();
+		
 	}
 	
 
@@ -63,6 +65,41 @@ public class Main {
 		q.pop();
 		
 		System.out.println(q);
+
+	}
+	protected static void testFraction() {
+		String output = new String();
+		try {
+			Fraction frct1 = new Fraction(1,1);
+			output = frct1.toString(frct1);
+			System.out.println(output);
+			Fraction frct2 = new Fraction(5,1);
+			
+			frct1 = frct1.operator(frct1,'+', frct2);
+			output = frct1.toString(frct1);
+			System.out.println(output);
+			
+			frct1 = frct1.operator(frct1,'-', frct2);
+			output = frct1.toString(frct1);
+			System.out.println(output);
+			
+			frct1 = frct1.operator(frct1,'*', frct2);
+			output = frct1.toString(frct1);
+			System.out.println(output);
+			
+			frct1 = frct1.operator(frct1,'/', frct2);
+			output = frct1.toString(frct1);
+			System.out.println(output);
+			
+			frct1 = frct1.operator(frct1,'/', frct2);
+			output = frct1.toString(frct1);
+			System.out.println(output);
+			
+		}
+		catch (FractionException e) {
+			System.out.println("Error : " + e.toString());
+		}
+		
 
 	}
 }
