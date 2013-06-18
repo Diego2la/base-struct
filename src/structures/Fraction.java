@@ -1,9 +1,5 @@
 package structures;
 
-
-import java.util.*;
-
-
 public class Fraction 
 {
 	public int m; //numerator
@@ -15,7 +11,7 @@ public class Fraction
 		if (n == 0){
 			throw new FractionException(new String("Divided by zero.(n != 0)"));
 		}
-		this.Short(this);
+		Short(this);
 	}
 	
 	public Fraction operator (Fraction frct1, char symbolOperator, Fraction frct2 ) throws FractionException

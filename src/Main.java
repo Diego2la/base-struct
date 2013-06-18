@@ -4,14 +4,20 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		// using structures samples 
+		// (not all methods are tested here)
 		testStack();
+		
+		System.out.println();
+		System.out.println();
+		
+		testQueue();
 		
 	}
 	
-	// using stack sample (not all Stack methods are tested here)
+
 	protected static void testStack() {
 		try {
-			
 			Stack<Point> points;
 			points = new Stack<Point>();
 			System.out.println(points);
@@ -22,7 +28,7 @@ public class Main {
 			points.push(new Point(2,2));
 			System.out.println(points);
 			
-			Point p = points.pop();
+			points.pop();
 			System.out.println(points);
 			
 			System.out.println("-------------------");
@@ -41,8 +47,22 @@ public class Main {
 			}
 
 		}
-		catch(StackException e) {}
+		catch(StackException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
+	protected static void testQueue() {
+		
+		Queue<Integer> q = new Queue<Integer>();
+		q.push(new Integer(100));
+		q.push(new Integer(101));
+		q.push(new Integer(102));
+		q.push(new Integer(102));
+		q.pop();
+		
+		System.out.println(q);
+
+	}
 }
