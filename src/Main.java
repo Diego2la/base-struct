@@ -1,4 +1,6 @@
-
+// Author : Tyurin Dima, Silchenkov Ilya
+// E-mail : tyurin94@gmail.com, gitrus@yandex.com
+// Our symbol: Leonid Novikov
 
 import structure.*;
 import structure.exceptions.*;

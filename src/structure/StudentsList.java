@@ -1,4 +1,10 @@
+// Author : Kostya Baladurin
+// E-mail : kostya3593@mail.ru
+// Our symbol: Leonid Novikov
+
 package structure;
+
+import structure.exceptions.IncorrectDataException;
 
 public class StudentsList {
     private final String NOT_UNIQ_ID = "This id isn't unique"; 
@@ -35,7 +41,7 @@ public class StudentsList {
         } 
     } 
       
-    public ListOfStudents(){ 
+    public StudentsList(){ 
         length = 0; 
         list = null; 
     } 

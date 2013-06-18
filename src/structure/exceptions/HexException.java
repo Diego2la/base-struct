@@ -4,9 +4,9 @@
 
 package structure.exceptions;
 
-public class FractionException extends BaseStructException {
+public class HexException extends BaseStructException {
 	
-	public FractionException(String error) {
+	public HexException(String error) {
 		super(error);
 	}
 

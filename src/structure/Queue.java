@@ -1,3 +1,7 @@
+// Author : Tyurin Dima
+// E-mail : tyurin94@gmail.com
+// Our symbol: Leonid Novikov
+
 package structure;
 
 public class Queue<T> {

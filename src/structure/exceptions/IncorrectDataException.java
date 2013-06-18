@@ -4,10 +4,10 @@
 
 package structure.exceptions;
 
-public class StackException extends BaseStructException {
+public class IncorrectDataException extends BaseStructException {
 	
-	public StackException(String error) {
+	public IncorrectDataException(String error) {
 		super(error);
 	}
-	
+
 }
