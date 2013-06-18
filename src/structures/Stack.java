@@ -1,5 +1,8 @@
 package structures;
 
+import structure.exceptions.StackException;
+import structure.exceptions.VectorException;
+
 public class Stack<T> {
 	
 	public Stack() throws StackException {
@@ -7,10 +10,7 @@ public class Stack<T> {
 	}
 	
 	public Stack(int initSize) throws StackException {
-		if (initSize < 0) 
-			throw new StackException(new String("init size is below zero"));
-		if (initSize == 0) init(DEFAULT_STACK_SIZE);
-		else init(initSize);
+		init(initSize);
 	}
 		
 	// Copy constructor doesn't create copy of elements here.
@@ -18,20 +18,29 @@ public class Stack<T> {
 	public Stack(Stack<T> stack) throws StackException {
 		int size = stack.size();
 		init(size);
-		Object[] temp = new Object[size];
-		for (int i = 0; i < size; ++i)
-			temp[i] = stack.pop();
-		for (int i = size - 1; i >= 0; --i)
-		{
-			stack.push((T)temp[i]);
-			push((T)temp[i]);
+		Vector<T> temp;
+		try {
+			temp = new Vector<T>(size);
+			for (int i = 0; i < size; ++i)
+				temp.set(i, stack.pop());
+			for (int i = size - 1; i >= 0; --i)
+			{
+				stack.push((T)temp.get(i));
+				push((T)temp.get(i));
+			}
+		} catch (VectorException e) {
+			e.printStackTrace();
 		}
 	}
 	
 	public void push(T elem) throws StackException {
-		if (idx == pool.length - 1) 
-			increaseSize();
-		pool[++idx] = elem;
+		if (idx == pool.size() - 1)
+			try {
+				pool.increaseSize(pool.size()*2);
+			} catch (VectorException e) {
+				e.printStackTrace();
+			}
+		pool.set(++idx, elem);
 	}
 	
 	public T pop() throws StackException {
@@ -43,7 +52,13 @@ public class Stack<T> {
 	public T top() throws StackException {
 		if (idx == -1)
 			throw new StackException(new String("stack is empty"));
-		return (T)pool[idx];
+		T t = null;
+		try {
+			t = (T)pool.get(idx);
+		} catch (VectorException e) {
+			e.printStackTrace();
+		}
+		return t;
 	}
 	
 	public int size() {
@@ -52,28 +67,31 @@ public class Stack<T> {
 	
 	@Override
 	public String toString() {
-		String str = new String("Stack(" + pool.length + "):{ ");
-		for (int i = 0; i < idx; ++i)
-			str += new String("{" + pool[i].toString() + "}, ");
-		if (idx >= 0 && idx < pool.length)
-			str += new String("{" + pool[idx].toString() + "}");
-		str += new String(" }");
+		String str = null;
+		try {
+			str = new String("Stack(" + pool.size() + "):{ ");
+			for (int i = 0; i < idx; ++i)
+				str += new String("{" + pool.get(i).toString() + "}, ");
+			if (idx >= 0 && idx < pool.size())
+				str += new String("{" + pool.get(idx).toString() + "}");
+			str += new String(" }");
+		}
+		catch (VectorException e) {
+			e.printStackTrace();
+		}
 		return str;
 	}
 	
 	protected void init(int size) throws StackException {
 		idx = -1;
-		pool = new Object[size];
-	}
-
-	protected void increaseSize() throws StackException {
-		Object[] temp = new Object[pool.length * 2];
-		for (int i = 0; i < pool.length; ++i)
-			temp[i] = pool[i];
-		pool = temp;
+		try {
+			pool = new Vector<T>(size);
+		} catch (VectorException e) {
+			throw new StackException(new String("Unable to create vector"));
+		}
 	}
 	
-	protected Object[] pool; // stores T[] array
+	protected Vector<T> pool; // stores T[] array
 	protected int idx; // index
 	
 	private final int DEFAULT_STACK_SIZE = 10;

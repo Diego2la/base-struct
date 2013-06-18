@@ -1,5 +1,6 @@
 package structures;
 
+import structure.exceptions.FractionException;
 
 public class Fraction 
 {
