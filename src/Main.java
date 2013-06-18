@@ -1,5 +1,5 @@
-// Author : Tyurin Dima, Silchenkov Ilya
-// E-mail : tyurin94@gmail.com, gitrus@yandex.com
+// Author : Tyurin Dima, Silchenkov Ilya, Sergei Bocharov
+// E-mail : tyurin94@gmail.com, gitrus@yandex.com, smidlech@yandex.ru
 // Our symbol: Leonid Novikov
 
 import structure.*;
@@ -41,7 +41,40 @@ public class Main {
 		testTriangle();
 		System.out.println("============================================");
 		System.out.println(); 
+	
+		System.out.println("================ Complex test ==============");
+		testComplex();
+		System.out.println("============================================");
+		System.out.println(); 
+
+	}
+	
+	protected static void testComplex() {
+		Complex ob  = new Complex(3, 5),
+				ob1 = new Complex(-1,8),
+				ob2 = new Complex();
 		
+		System.out.print("z1 = "); ob.print();
+		System.out.print("z2 = "); ob1.print();
+		System.out.print("z3 = "); ob2.print();
+		
+		try {
+			ob = ob.plus(ob1);
+			System.out.print("z1+z2"); ob.print();
+			
+			ob = ob.minus(ob1);
+			System.out.print("z1-z2"); ob.print();
+			
+			if(ob1.isReal()) { System.out.print("it's real number"); }
+			
+			if(ob1.equals(ob2)) { System.out.print("z1 = z2"); }
+		} catch (ComplexException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(ob1.mod());
+		System.out.println(ob2.arg());
 	}
 
 	protected static void testVector() {

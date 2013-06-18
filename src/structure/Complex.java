@@ -11,6 +11,11 @@ public class Complex
     public double re;
     public double im;
     
+    public Complex() {
+    	this.re = 0.0; 
+    	this.im = 0.0;
+    }
+    
 	public Complex(double a, double b)
     {
         this.re = a;
