@@ -9,8 +9,6 @@ public class Main {
 
 		test();
 		
-		testFraction();
-		
 	}
 	
 	// using structures samples 
@@ -26,8 +24,14 @@ public class Main {
 		testStack();
 		System.out.println("============================================");
 		System.out.println(); 
+		
 		System.out.println("================ Queue test ================");
 		testQueue();
+		System.out.println("============================================");
+		System.out.println(); 
+		
+		System.out.println("================ Fraction test =============");
+		testFraction();
 		System.out.println("============================================");
 		System.out.println(); 
 		
