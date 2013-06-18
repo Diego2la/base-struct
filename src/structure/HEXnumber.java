@@ -40,12 +40,20 @@ public class HEXnumber {
 		
 	}
 	
-	/*public DEXnumber (int s) throws DexException 
+	public HEXnumber (int s)
 	{
 		
-		DexNumber = String.valueOf(s); 
-
-	}*/
+		this.HexNumber.valueOf(s); 
+		
+	}
+	
+	public HEXnumber ()
+	{
+		
+		this.HexNumber.valueOf(0); 
+		
+	}
+	
 	
 	public HEXnumber Plus (HEXnumber num1, HEXnumber num2) throws HexException
 	{
