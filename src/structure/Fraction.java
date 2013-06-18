@@ -13,8 +13,24 @@ public class Fraction
 		{
 			throw new FractionException(new String("Divided by zero.(n != 0)"));
 		}
+		
+		this.m = m;
+		this.n = n;
+		
 		Short(this);
 	}
+	
+	public Fraction (int m) throws FractionException 
+	{
+		this.m = m;
+		this.n = 1;
+		if (n == 0)
+		{
+			throw new FractionException(new String("Divided by zero.(n != 0)"));
+		}
+		Short(this);
+	}
+	
 	
 	public Fraction operator (Fraction frct1, char symbolOperator, Fraction frct2 ) throws FractionException
 	{
@@ -97,7 +113,7 @@ public class Fraction
 			{
 				if (primeNumbers[j] == 0) primeNumbers[j] = i;
 
-				else if (i % primeNumbers[j] != 0) break;
+				else if (i % primeNumbers[j] == 0) break;
 			}
 		}
 		
@@ -106,8 +122,8 @@ public class Fraction
 		while(i < size){
 			if((m%primeNumbers[i] == 0) && (n%primeNumbers[i] == 0))
 			{
-				frct.m = m/primeNumbers[i];
-				frct.n = n/primeNumbers[i];
+				frct.m = m / primeNumbers[i];
+				frct.n = n / primeNumbers[i];
 			}
 			else i++;
 		}
