@@ -1,5 +1,7 @@
+package structure;
+
 // simple 2D (int, int) point implementation
-class Point {
+public class Point {
 	public int x;
 	public int y;
 	public Point() {}

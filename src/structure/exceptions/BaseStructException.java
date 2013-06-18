@@ -1,8 +1,8 @@
-package structures;
+package structure.exceptions;
 
-public class StackException extends Exception {
+public class BaseStructException extends Exception {
 	
-	public StackException(String error) {
+	public BaseStructException(String error) {
 		this.error = error;
 	}
 	
