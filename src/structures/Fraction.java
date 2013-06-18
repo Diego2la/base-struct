@@ -24,32 +24,32 @@ public class Fraction
 		switch (symbolOperator){
 			case '-' :
 			{
-				frct1.m = (frct1.m*frct2.n - frct2.m*frct1.n);// a/b - c/d = (a*d - c*b) / (b*d)
-				frct1.n = frct1.n*frct2.n;//b*d
+				frct1.m = (frct1.m*frct2.n - frct2.m*frct1.n);	// a/b - c/d = (a*d - c*b) / (b*d)
+				frct1.n = frct1.n*frct2.n;						//b*d
 				Short(frct1);//
 				break;
 			}
 			
 			case '+' :
 			{
-				frct1.m = (frct1.m*frct2.n + frct2.m*frct1.n);// a/b + c/d = (a*d + c*b) / (b*d)
-				frct1.n = frct1.n*frct2.n;//b*d
+				frct1.m = (frct1.m*frct2.n + frct2.m*frct1.n);	// a/b + c/d = (a*d + c*b) / (b*d)
+				frct1.n = frct1.n*frct2.n;						//b*d
 				Short(frct1);//
 				break;
 			}
 			
 			case '*' :
 			{
-				frct1.m = frct1.m*frct2.m ;// a/b * c/d = (a * c) / (b*d)
-				frct1.n = frct1.n*frct2.n;//b*d
+				frct1.m = frct1.m*frct2.m ;						// a/b * c/d = (a * c) / (b*d)
+				frct1.n = frct1.n*frct2.n;						//b*d
 				Short(frct1);//
 				break;
 			}
 			
 			case '/' :
 			{
-				frct1.m = frct1.m*frct2.n ;// a/b / c/d = (a * d) / (b*c)
-				frct1.n = frct1.n*frct2.m;//b*c
+				frct1.m = frct1.m*frct2.n ;						// a/b / c/d = (a * d) / (b*c)
+				frct1.n = frct1.n*frct2.m;						//b*c
 				Short(frct1);//
 				break;
 			}
@@ -59,8 +59,7 @@ public class Fraction
 		
 		return frct1;
 		
-	}
-	
+	}	
 
 	private void Short(Fraction frct)
 	{
