@@ -95,31 +95,37 @@ public class Fraction
 			
 		}
 		
+		int max;
 		if(m>n){
-			size = (int) Math.round(Math.sqrt((double) m)) + 1;
-			primeNumbers = new int[size];
+			max=m;
 		}
 		else{
-			size = (int) Math.round(Math.sqrt((double) n)) + 1;
-			primeNumbers = new int[size];
+			max=n;
 		}
-		
+		size = (int) Math.round(Math.sqrt((double) max)) + 1;
+		primeNumbers = new int[size];
 		
 		primeNumbers[0] = 2;
-		
+		int count=0;
 		for(int  i=2; i<size ; i++){
 			
 			for(int j=0; j<i; j++)
 			{
-				if (primeNumbers[j] == 0) primeNumbers[j] = i;
+				if (primeNumbers[j] == 0) 
+					{
+						primeNumbers[j] = i;
+						count= j;
+						break;
+					}
 
 				else if (i % primeNumbers[j] == 0) break;
 			}
 		}
 		
-		
+		primeNumbers[++count] = max;
+				
 		int i = 0;
-		while(i < size){
+		while(i < count){
 			if((m%primeNumbers[i] == 0) && (n%primeNumbers[i] == 0))
 			{
 				frct.m = m / primeNumbers[i];
@@ -138,8 +144,9 @@ public class Fraction
 		}
 		String s = new String();
 		
-		s = "huy";
-
+		s += m;
+		s += '/';
+		s += n;
 		
 		return s;
 	}
