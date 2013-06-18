@@ -11,7 +11,7 @@ public class Fraction
 	public Fraction(int m, int n) throws FractionException 
 	{
 		if (n == 0){
-			
+			throw new FractionException(new String("Divided by zero.(n != 0)"));
 		}
 		
 		if (n<0) {
@@ -27,13 +27,15 @@ public class Fraction
 		else{
 			int[] primesNumber = new int[n];
 		}
-		primesNumber[0] = 1;
+		primesNumber[0] = 2;
 		//for(int  i=1; i<n ; i++){
 			
-			//for(int j=0; )
+		//	for(int j=0; )
 			
 		
 		
 	}
+	
+	private void Short(Fraction mn){}
 
 }
