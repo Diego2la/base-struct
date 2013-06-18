@@ -1,5 +1,5 @@
-// Author : Tyurin Dima
-// E-mail : tyurin94@gmail.com
+// Author : Sergei Bocharov
+// E-mail : smidlech@yandex.ru
 // Our symbol: Leonid Novikov
 
 package structure;
