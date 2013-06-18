@@ -3,6 +3,8 @@ Base structures
 
 This code was created while preparing for programming exam in 4 sem 2013.
 
+![](https://raw.github.com/Diego2la/base-struce/master/img/goose.jpg "")
+
 Every Mephi's bum who see it must:
 ----------------------------------
 
