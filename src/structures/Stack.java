@@ -18,7 +18,7 @@ public class Stack<T> {
 	public Stack(Stack<T> stack) throws StackException {
 		int size = stack.size();
 		init(size);
-	    Object[] temp = new Object[size];
+		Object[] temp = new Object[size];
 		for (int i = 0; i < size; ++i)
 			temp[i] = stack.pop();
 		for (int i = size - 1; i >= 0; --i)
