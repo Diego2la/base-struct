@@ -1,4 +1,4 @@
-package structures;
+package structure;
 
 import structure.exceptions.FractionException;
 

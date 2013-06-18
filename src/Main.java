@@ -1,7 +1,7 @@
 
 import java.io.ObjectInputStream.GetField;
 
-import structures.*;
+import structure.*;
 import structure.exceptions.*;
 
 public class Main {

@@ -1,4 +1,4 @@
-package structures;
+package structure;
 
 // simple 2D (int, int) point implementation
 public class Point {
