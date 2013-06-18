@@ -21,7 +21,12 @@ public class Fraction
 		this.m = m;
 		this.n = n;
 		
-		Short(this);
+	}
+	public Fraction ()
+	{
+		this.m = 0;
+		this.n = 1;
+		
 	}
 	
 	public Fraction (int m) throws FractionException 
